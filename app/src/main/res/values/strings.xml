@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VotingApplication</string>
+    <string name="submit">Submit</string>
+    <string name="question_title">Question Title</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="log_out">Log out</string>
+</resources>
