@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button = findViewById(R.id.log_out);
 
         button.setOnClickListener(v -> {
+            button.setEnabled(false);
             auth.signOut();
             this.finish();
         });

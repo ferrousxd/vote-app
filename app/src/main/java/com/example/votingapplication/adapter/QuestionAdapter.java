@@ -109,6 +109,15 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
                 RadioButton selectedRadioButton = itemView.findViewById(selectedId);
                 int optionIndex = optionsRadioGroup.indexOfChild(selectedRadioButton);
 
+                if (optionIndex < 0) {
+                    new AlertDialog.Builder(v.getContext())
+                            .setTitle("Error")
+                            .setMessage("You did not chose the option")
+                            .setCancelable(true)
+                            .show();
+                    return;
+                }
+
                 Map<String, Object> data = new HashMap<>();
                 data.put("userUID", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
                 data.put("questionUID", question.getUid());

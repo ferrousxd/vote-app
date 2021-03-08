@@ -26,16 +26,18 @@ public class LoginActivity extends AppCompatActivity {
         final Button button = findViewById(R.id.login);
 
         button.setOnClickListener(v -> {
+            button.setEnabled(false);
             String email = emailEditText.getText().toString();
             String password = passwordEditText.getText().toString();
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this, "Incorrect Credentials", Toast.LENGTH_SHORT).show();
                 }
+                button.setEnabled(true);
             });
         });
     }
