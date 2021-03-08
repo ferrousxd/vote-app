@@ -60,7 +60,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             }
         }
 
-        // Достаем views из view holder
         TextView questionTitleTextView = holder.questionTitleTextView;
         RadioGroup optionsRadioGroup = holder.optionsRadioGroup;
         Button submitButton = holder.submitButton;
@@ -69,7 +68,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             submitButton.setEnabled(false);
         }
 
-        // Название вопроса
         questionTitleTextView.setText(currentQuestion.getTitle());
 
         for (Option option : currentQuestion.getOptions()) {
